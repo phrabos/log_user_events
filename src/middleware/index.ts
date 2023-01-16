@@ -48,7 +48,7 @@ function logEvent(req: Request, res: Response, next: NextFunction) : Response {
   // const now = 1673766504965
   if (eventLogs && eventLogs[now] && eventLogs[now][eventToLog]) eventLogs[now][eventToLog] += 1;
   else if (eventLogs[now]) eventLogs[now][eventToLog] = 1
-  else eventLogs[now] = { [eventToLog]: 1 }
+  else eventLogs[now] = { [eventToLog]: 1 } as typeof LogEvents
 
   return res.json(eventLogs)
 
